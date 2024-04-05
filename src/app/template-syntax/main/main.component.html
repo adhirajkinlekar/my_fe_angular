@@ -1,0 +1,72 @@
+<!-- 
+**Attribute directives** are a type of directive that allows you to change the appearance or behavior of a DOM element. 
+They are called "attribute directives" because you apply them to HTML elements as attributes. 
+These directives manipulate the behavior, appearance, or structure of the DOM element they are attached to.
+
+Angular provides several built-in attribute directives, such as:
+
+- ngClass: This directive dynamically adds or removes CSS classes based on certain conditions.
+- ngStyle: Allows you to dynamically set CSS styles based on expression evaluation.
+- ngModel: Used mainly in forms for two-way data binding, allowing the value of an input field to be bound to a variable in the component.
+- ngIf: Conditionally adds or removes the element from the DOM based on an expression.
+- ngSwitch: Another way of conditionally displaying elements by switching between multiple possible views based on an expression.
+- ngFor: Iterates over a collection (such as an array) and creates a template for each item.
+
+**Property binding** allows you to set the value of an HTML element property (such as src, href, disabled, value, etc.) based on a value from the component class. 
+It binds the value of a property in the component class to an attribute of an HTML element in the template. 
+Property binding is denoted by square brackets [].
+
+Here's a list of common properties that can be bound using property binding in Angular:
+
+- src: Binds the source URL of an image or iframe element.
+- href: Binds the URL of an anchor element.
+- disabled: Binds the disabled state of an input, button, or other form elements.
+- value: Binds the value of an input element, such as text input, checkbox, radio button, etc.
+- innerHTML: Binds HTML content to be rendered inside an element.
+- innerText: Binds plain text content to be rendered inside an element.
+- hidden: Binds the visibility of an element.
+- style: Binds inline CSS styles to an element.
+- class: Binds CSS classes to an element.
+- id: Binds the ID attribute of an element.
+- placeholder: Binds the placeholder text of an input element.
+- checked: Binds the checked state of a checkbox or radio button.
+- min, max: Binds the minimum and maximum values of an input element.
+- readOnly: Binds the read-only state of an input element.
+
+**Event binding** is a way to listen to and react to events that occur in the HTML DOM.
+Here are some common types of event binding in Angular:
+
+- Click Event Binding: Used to handle click events on HTML elements like buttons, links, etc.
+- Input Event Binding: Listens for changes in input elements such as text input, textarea, etc.
+- Key Event Binding: Allows you to handle keyboard events such as keydown, keyup, and keypress.
+- Mouse Event Binding: Used to handle mouse events such as mouseover, mouseout, mousedown, mouseup, etc.
+- Form Event Binding: Helps in handling form events such as submit, reset, etc.
+- Change Event Binding: Listens for changes in select elements and other form controls that support the change event.
+- Focus and Blur Event Binding: Used to handle focus and blur events on HTML elements.
+- Scroll Event Binding: Allows you to react to scroll events on HTML elements.
+-->
+
+<div class="card">
+    <div class="card-body">
+
+      <!-- Interpolation -->
+      <h1 style="text-align: center;" class="mt-3 mb-3">Welcome, {{ username }}</h1>
+  
+      <!-- Event binding + Property Binding + Attribute Directive -->
+
+      <img (click)="isHighlighted = !isHighlighted" [src]="userImage" [ngClass]="{ 'spin-animation': isHighlighted }" style="cursor: pointer;" class="img-fluid mt-3 mb-3">
+
+      <!-- Structural attribute directive -->
+      <ul class="list-group mt-3">
+        <li class="list-group-item" *ngFor="let item of items">{{ item }}</li>
+      </ul>
+
+      <!-- The *ngIf directive in Angular does remove the element and its contents from the DOM when the condition evaluates to false. 
+      This means that if the condition provided to *ngIf is false, the element and its contents will not be rendered in the DOM at all.
+      If you don't want to remove the element from the DOM but rather hide it based on a condition, you can use the [hidden] attribute binding instead of *ngIf. -->
+
+      <div [hidden]="true" class="alert alert-success" role="alert">
+        I am always hidden but never removed from the DOM.
+      </div>
+    </div>
+  </div> 

@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-body">
+        <div class="container">
+            <h2>List of Lifecycle Events</h2>
+            <ul class="list-group mt-3">
+              <li class="list-group-item" *ngFor="let event of lifecycleEvents;let i = index">{{i+1}}. {{ event.message }} {{event.emoji}}</li>
+            </ul>
+          </div>
+</div>
+</div>

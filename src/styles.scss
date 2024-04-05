@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";  
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to the entire body */
+}
+
+.card {
+    margin-top: 50px;
+    min-width: 400px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
