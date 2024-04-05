@@ -1,0 +1,18 @@
+<app-child
+[title]="'Prem Kumar Shahi'"
+[imageURL]="'https://www.codingnepalweb.com/wp-content/uploads/2022/10/Card.jpg'"
+[tag]="'master_card'"
+[isActive]="true"
+[description]="'These values were passed from the parent component into the child component'"
+
+(messageEvent)="receiveMessage($event)">
+</app-child>
+
+<div class="card border-dark mb-3" *ngIf="bankDetails">
+    <div class="card-header bg-dark text-white">{{bankDetails.name}}</div>
+    <div class="card-body text-dark">
+      <p class="card-text mt-2">{{bankDetails.tag | convert: 'user_name' }}</p>
+      <p class="card-text">{{bankDetails.message}}</p>
+    </div>
+  </div>
+  

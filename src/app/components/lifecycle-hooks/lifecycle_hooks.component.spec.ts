@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponent } from './main.component';
+import { LifecycleHooksComponent } from './lifecycle_hooks.component';
 
-describe('MainComponent', () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+describe('LifecycleHooksComponent', () => {
+  let component: LifecycleHooksComponent;
+  let fixture: ComponentFixture<LifecycleHooksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MainComponent]
+      declarations: [LifecycleHooksComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MainComponent);
+    fixture = TestBed.createComponent(LifecycleHooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

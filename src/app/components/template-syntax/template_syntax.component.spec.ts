@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponent } from './main.component';
+import { TemplateSyntax } from './template_syntax.component';
 
-describe('MainComponent', () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+describe('TemplateSyntax', () => {
+  let component: TemplateSyntax;
+  let fixture: ComponentFixture<TemplateSyntax>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MainComponent]
+      declarations: [TemplateSyntax]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MainComponent);
+    fixture = TestBed.createComponent(TemplateSyntax);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

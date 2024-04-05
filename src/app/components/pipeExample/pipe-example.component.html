@@ -1,0 +1,32 @@
+<!-- In Angular, pipes are a feature that allows you to transform data in the template HTML. They are similar to filters in AngularJS or to the concept of pipes in Unix-like operating systems, where you can send the output of one command as input to another command.
+Built-in Pipes: Angular provides several built-in pipes for common transformations. Some examples include:
+
+DatePipe: Formats dates.
+UpperCasePipe and LowerCasePipe: Converts text to uppercase or lowercase.
+CurrencyPipe: Formats numbers as currency.
+DecimalPipe: Formats numbers as decimal numbers.
+PercentPipe: Formats numbers as percentages.
+AsyncPipe: Handles asynchronous data and subscriptions.
+JsonPipe: Converts data into a JSON string. -->
+
+<!-- Best Practices:
+
+Use pipes for presentation logic, keeping your component classes leaner.
+Avoid complex logic in pipes, as it can reduce performance and make debugging more difficult.
+Consider using memoization techniques for expensive operations in custom pipes to improve performance. -->
+
+<!-- Example of a custom pipe -->
+
+<div class="card">
+    <div class="card-header">Enter Your Name</div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="nameInput">Name (Without Spaces)</label>
+        <input type="text" class="form-control" id="nameInput" name="nameInput" [(ngModel)]="name" (keypress)="preventWhitespace($event)" autocomplete="off">
+      </div>
+      <div class="mt-3" *ngIf="name">
+        <p>Your username: {{ name | convert: 'user_name'  }}</p>
+      </div>
+    </div>
+  </div>
+  
