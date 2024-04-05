@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
  
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
 
   {
     path:"lifecycle_hooks",  loadChildren: () => import('./lifecycle-hooks/lifecycle-hooks.module').then(m => m.LifecycleHooksModule)
-  }
+  },
+  { path: "**" , component: NotFoundComponent }
+
 ];
 
 @NgModule({
