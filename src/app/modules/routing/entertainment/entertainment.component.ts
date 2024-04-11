@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute, ActivatedRouteSnapshot, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-entertainment',
@@ -22,6 +21,5 @@ export class EntertainmentComponent {
   setActiveTab(tab: string) {
     this.activeTab = tab;
   }
-
 
 }

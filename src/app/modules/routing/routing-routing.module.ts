@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: "metal_music", component:MetalMusicComponent },
     ]
   },
-  { path: 'work', component: SoftwareDevelopmentComponent, data :{ type: 'work' } }, 
+  { path: 'work', component: SoftwareDevelopmentComponent, data :{ type: 'work' } }
 ];
 
 @NgModule({

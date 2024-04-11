@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MyModuleRoutingModule } from './my-module-routing.module';
+import { MyModuleRoutingModule } from './routing-routing.module';
 import { EntertainmentComponent } from './entertainment/entertainment.component';
 import { SoftwareDevelopmentComponent } from './software-development/software-development.component';
 import { ProWrestlingComponent } from './entertainment/pro-wrestling/pro-wrestling.component';
@@ -20,4 +19,5 @@ import { MetalMusicComponent } from './entertainment/metal-music/metal-music.com
     MyModuleRoutingModule
   ]
 })
-export class MyModuleModule { }
+
+export class RoutingModule { }

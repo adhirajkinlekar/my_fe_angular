@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-
-
 export class AppComponent {
 
   title = 'my_fe_angular';
@@ -15,11 +13,13 @@ export class AppComponent {
   constructor() { }
   
   // todos -
+  // shared modules
   // autentication and authorization
   // services, http, http intercepters, di
   // rxjs
   // reactive forms
   // guards
   // resolver
+  // typescript
 }
 
