@@ -5,6 +5,7 @@
 <div style="display: flex;justify-content: center;align-items: center;">
     <div class="tab-card" style="width: 400px;">
         <div class="tab-header">
+          <!-- use routerlinkactive to handle showing of active tabs -->
           <div class="tab" [ngClass]="{'active': activeTab === 'pro_wrestling'}" routerLink="./pro_wrestling"  (click)="setActiveTab('pro_wrestling')">Pro Wrestling</div>
           <div class="tab" [ngClass]="{'active': activeTab === 'metal_music'}" routerLink="./metal_music"  (click)="setActiveTab('metal_music')">Metal Music</div>
         </div>

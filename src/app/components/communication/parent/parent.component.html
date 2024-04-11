@@ -1,3 +1,4 @@
+
 <app-child
 [title]="'Prem Kumar Shahi'"
 [imageURL]="'https://www.codingnepalweb.com/wp-content/uploads/2022/10/Card.jpg'"
@@ -6,6 +7,12 @@
 [description]="'These values were passed from the parent component into the child component'"
 
 (messageEvent)="receiveMessage($event)">
+
+<ng-container HeadingContent>
+  <P class="p-2">
+    This line of text was projected from the parent into the child component. This is technically not a form of communication but rather a very useful way to project content by using the ng-content directive 
+  </P>
+</ng-container>
 </app-child>
 
 <div class="card border-dark mb-3" *ngIf="bankDetails">
@@ -15,4 +22,5 @@
       <p class="card-text">{{bankDetails.message}}</p>
     </div>
   </div>
-  
+
+ 

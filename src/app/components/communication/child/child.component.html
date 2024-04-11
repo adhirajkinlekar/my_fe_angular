@@ -1,5 +1,8 @@
 <div class="card" [ngClass]="{'dim-card': !isActive}">
 
+  <!-- // <ng-content> is an Angular directive used for content projection. It's essentially a placeholder within a component's template where content from the component's parent can be inserted.  -->
+    
+    <ng-content select="[HeadingContent]"></ng-content>
     <img class="card-img-top" [src]="imageURL" alt="Card image">
   
     <div class="card-body">
