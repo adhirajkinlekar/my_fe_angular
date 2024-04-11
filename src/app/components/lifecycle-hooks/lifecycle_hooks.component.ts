@@ -28,6 +28,7 @@ export class LifecycleHooksComponent implements OnInit, OnChanges, DoCheck, Afte
     this.pushEvent({ message: 'ngOnChanges has been called', emoji: '🔄' });
   }
   
+  // ---
   ngDoCheck(): void {
     // A callback method that performs change-detection, invoked after the default change-detector runs. 
     // See KeyValueDiffers and IterableDiffers for implementing custom change checking for collections.
@@ -53,6 +54,7 @@ export class LifecycleHooksComponent implements OnInit, OnChanges, DoCheck, Afte
        // A callback method that is invoked immediately after the default change detector has completed one change-check cycle for a component's view.
     this.pushEvent({ message: 'ngAfterViewChecked has been called', emoji: '🔍🖼️' });
   }
+  //--
   
   ngOnDestroy(): void {
       // A callback method that performs custom clean-up, invoked immediately before a directive, pipe, or service instance is destroyed.

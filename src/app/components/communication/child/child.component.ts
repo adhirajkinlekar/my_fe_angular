@@ -14,6 +14,7 @@ export class ChildComponent {
   @Input() imageURL = "";
   @Input() isActive = false; 
 
+  // - child to parent
   @Output() messageEvent = new EventEmitter<BankDetails>();
 
   sendMessage() {

@@ -10,7 +10,7 @@ import { ParentComponent } from './components/communication/parent/parent.compon
  
 const routes: Routes = [
   { path:"",  component:HomeComponent },
-  { path:"template_syntax",  component: TemplateSyntax },
+  { path:"template_syntax",  component: TemplateSyntax }, 
   { path:"lifecycle_hooks",  component: LifecycleHooksComponent },
   { path:"pipes",  component: PipesExampleComponent },
   { path:"communication",  component: ParentComponent },
