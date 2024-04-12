@@ -8,8 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EntertainmentComponent {
 
-  activeTab: string = 'pro_wrestling';  
-
   constructor(private activatedroute: ActivatedRoute){ }
 
   ngOnInit() {
@@ -18,8 +16,5 @@ export class EntertainmentComponent {
     })
   }
 
-  setActiveTab(tab: string) {
-    this.activeTab = tab;
-  }
 
 }

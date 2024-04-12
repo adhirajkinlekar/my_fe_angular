@@ -9,10 +9,12 @@ import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle_
 import { TemplateSyntax } from './components/template-syntax/template_syntax.component';
 import { ConvertPipe } from './pipes/convert/convert.pipe';
 import { PipesExampleComponent } from './components/pipeExample/pipe-example.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './components/communication/parent/parent.component';
 import { ChildComponent } from './components/communication/child/child.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsComponent } from './components/forms/forms.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +26,14 @@ import { ChildComponent } from './components/communication/child/child.component
     NotFoundComponent, 
     ParentComponent,
     ChildComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

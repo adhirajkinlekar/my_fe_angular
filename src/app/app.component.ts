@@ -15,9 +15,8 @@ export class AppComponent {
   // todos -
   // shared modules
   // autentication and authorization
-  // services, http, http intercepters, di
   // rxjs
-  // reactive forms
+  // reactive forms - formBuilder, FormGroup, formarray
   // guards
   // resolver
   // typescript

@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>Employee</th>
+              <th>Manager</th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of employeeManagerMap; let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ user.employee }}</td>
+                <td>{{ user.manager }}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

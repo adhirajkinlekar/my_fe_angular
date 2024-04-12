@@ -10,6 +10,7 @@ import { ComponentService } from './component.service';
   providers: [ComponentService]
 })
 export class DiComponent {
+  openSecondaryComponent:boolean = false;
 
   constructor(public rootService:RootService, public moduleService:ModuleService, public componentService: ComponentService){
 

@@ -6,6 +6,7 @@ import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle_
 import { TemplateSyntax } from './components/template-syntax/template_syntax.component';
 import { PipesExampleComponent } from './components/pipeExample/pipe-example.component';
 import { ParentComponent } from './components/communication/parent/parent.component';
+import { FormsComponent } from './components/forms/forms.component';
 
  
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path:"lifecycle_hooks",  component: LifecycleHooksComponent },
   { path:"pipes",  component: PipesExampleComponent },
   { path:"communication",  component: ParentComponent },
-
+  { path:"forms",  component: FormsComponent },
   // Lazy loading in Angular is a technique used to improve the performance of your application by loading modules only when they are needed. 
   // Instead of loading all modules at once when the application starts, Angular loads modules asynchronously as the user navigates through the application. 
   // This helps reduce the initial bundle size and speeds up the application startup time.

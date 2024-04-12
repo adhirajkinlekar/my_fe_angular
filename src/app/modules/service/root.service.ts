@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ManagerSubordinateMap } from './service.interface';
 
 // Angular services are injectable classes designed to facilitate the sharing of functionality and the management of application state across multiple components. 
 // These services can be registered with various lifetimes, and they enable dependency injection, 
@@ -31,5 +33,26 @@ export class RootService {
 
   rootCounter: number = 0;
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getData() {
+    return this.http.get<ManagerSubordinateMap[]>('https://localhost:7121/managers/subordinates');
+  }
+
+  postData(data: any) {
+    return this.http.post<any>("custome_route", data);
+  }
+
+  updateData(id: number, data: any) {
+    return this.http.put<any>(`api_url/${id}`, data);
+  }
+
+  patchData(id: number, data: any) {
+    return this.http.patch<any>(`api_url/${id}`, data);
+  }
+
+  deleteData(id: number) {
+    return this.http.delete<any>(`api_url/${id}`);
+  }
 }
+

@@ -13,6 +13,7 @@ export class AuthHttpInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    
     const token = localStorage.getItem('JWT_TOKEN');
     
     if (token) {

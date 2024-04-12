@@ -1,8 +1,25 @@
+<div style="display:flex; justify-content: center; margin-top: 50px;margin-bottom: 20px;">
+  <button style="text-align: center;" type="button" class="btn btn-primary btn-rounded btn-shadow" (click)="openSecondaryComponent = !openSecondaryComponent">
+    {{openSecondaryComponent ? "Close Secondary component" : "Open Secondary component"}}</button>
+</div>
+
 
 <div style="display: flex; justify-content: center;">
-  <div class="card" style="display: flex; justify-content: center;width: 500px;">
+  <div class="card" style="width: 500px;">
+    <p><strong>The counter increments by one in the constructor of components that utilize these services.</strong></p>
+    <p>The root service is a singleton and increments only by 1 as it's used solely within one component. 
+      If provided in another module or directly in a component, it utilizes the same instance.
+    </p> 
+    <p>The module service, also a singleton, increments by 1 each time the primary component in the module is visited and by 1 again when we explicitly access the secondary component. If the service is provided in another module, it creates a new instance.
+    </p> 
+    <p>The component service's lifespan aligns with its host component, which means that the counter never exceeds 1.</p>
     <div class="counter">Root service Counter: {{ rootService.rootCounter }}</div>
     <div class="counter">Module service Counter: {{ moduleService.moduleCounter }}</div>
     <div class="counter">Component service Counter: {{ componentService.componentCounter }}</div>
   </div>
 </div>
+
+<div *ngIf="openSecondaryComponent">
+  <app-http></app-http>
+</div>
+
