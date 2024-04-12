@@ -20,7 +20,7 @@ const routes: Routes = [
   // Instead of loading all modules at once when the application starts, Angular loads modules asynchronously as the user navigates through the application. 
   // This helps reduce the initial bundle size and speeds up the application startup time.
   
-  { path:"modules", loadChildren: () => import('./modules/routing/routing.module').then(m => m.RoutingModule)},
+  { path:"routing", loadChildren: () => import('./modules/routing/routing.module').then(m => m.RoutingModule)},
   { path:"services", loadChildren: () => import('./modules/service/service.module').then(m => m.ServiceModule)},
   { path: "**" , component: NotFoundComponent }
 ];
