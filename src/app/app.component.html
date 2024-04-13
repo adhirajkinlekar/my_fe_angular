@@ -8,7 +8,7 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" style="display: flex;justify-content: space-between;">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/template_syntax">Template Syntax</a>
@@ -37,7 +37,17 @@
         <li class="nav-item">
           <a class="nav-link">Security</a>
         </li>
+        <li class="nav-item" *ngIf="appService.isLoggedIn$.getValue()">
+          <a class="nav-link" routerLink="/protected">Protected</a>
+        </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+         <b>
+          <a class="nav-link" (click)="handleAuthStatus()">{{appService.authStatusText}}</a>
+        </b> 
+        </li>
+        </ul>
     </div>
   </div>
 </nav>

@@ -1,0 +1,31 @@
+/* unauthorized.component.css */
+.container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border: 1px solid #e74c3c; /* Border color */
+    border-radius: 5px;
+  }
+  
+  .card-header {
+    background-color: #e74c3c; /* Header background color */
+    color: #fff; /* Header text color */
+    padding: 10px;
+    border-bottom: 1px solid #e74c3c; /* Header border color */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #3498db; /* Button background color */
+    border-color: #3498db; /* Button border color */
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9; /* Button background color on hover */
+    border-color: #2980b9; /* Button border color on hover */
+  }
+  

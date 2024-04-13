@@ -26,7 +26,6 @@ export class HttpComponent implements OnInit{
     this.rootService.getData().subscribe({
       next: (employeeManagerMap) => {
         this.employeeManagerMap = employeeManagerMap;
-        console.log(this.employeeManagerMap)
       },
       error: (err) => {
         // Handle error

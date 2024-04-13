@@ -36,7 +36,7 @@ export class RootService {
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get<ManagerSubordinateMap[]>('https://localhost:7121/managers/subordinates');
+    return this.http.get<ManagerSubordinateMap[]>('https://localhost:7121/api/staff/managers/subordinates');
   }
 
   postData(data: any) {

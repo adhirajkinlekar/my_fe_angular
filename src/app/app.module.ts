@@ -12,8 +12,12 @@ import { PipesExampleComponent } from './components/pipeExample/pipe-example.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './components/communication/parent/parent.component';
 import { ChildComponent } from './components/communication/child/child.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from './components/forms/forms.component';
+import { SignInComponent } from './components/auth/sign-in/sign-in.component';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { AuthHttpInterceptor } from './components/auth/auth-interceptor.component';
+import { ProtectedComponent } from './components/protected/protected.component';
  
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { FormsComponent } from './components/forms/forms.component';
     NotFoundComponent, 
     ParentComponent,
     ChildComponent,
-    FormsComponent
+    FormsComponent,
+    SignInComponent,
+    UnauthorizedComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { FormsComponent } from './components/forms/forms.component';
     ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {
+      provide:HTTP_INTERCEPTORS,useClass:AuthHttpInterceptor,multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

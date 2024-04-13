@@ -19,14 +19,15 @@ export class AuthHttpInterceptor implements HttpInterceptor {
     if (token) {
       request = request.clone({
         setHeaders: {
-          'Authorization': token
+          'Authorization': `Bearer ${token}`
         }
       });
     }
     
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 403) this.router.navigate(['/unauthorized']);
+
+        if ([401,403].includes(error.status)) this.router.navigate(['/unauthorized']);
         
         return throwError(() => error);
       }),

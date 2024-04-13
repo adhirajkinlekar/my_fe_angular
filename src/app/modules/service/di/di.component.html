@@ -1,5 +1,5 @@
 <div style="display:flex; justify-content: center; margin-top: 50px;margin-bottom: 20px;">
-  <button style="text-align: center;" type="button" class="btn btn-primary btn-rounded btn-shadow" (click)="openSecondaryComponent = !openSecondaryComponent">
+  <button style="text-align: center;" type="button" class="btn btn-primary btn-rounded btn-shadow" (click)="openSecondaryComponent = !openSecondaryComponent;triggerChangeDetection()">
     {{openSecondaryComponent ? "Close Secondary component" : "Open Secondary component"}}</button>
 </div>
 
