@@ -12,12 +12,12 @@ export class AppService implements OnDestroy {
   // The unique feature of BehaviorSubject is that it stores the latest value that it emitted, and any new subscriber immediately receives the latest value even if they subscribe after the value was emitted.
   
   private authStatusSubscription!: Subscription
-  public isLoggedIn$ = new BehaviorSubject<boolean>(false);
+  public readonly isLoggedIn$ = new BehaviorSubject<boolean | null>(null); // value of this BehaviorSubject should never be set to null after initial initialization
   public authStatusText = 'Sign In';
 
   constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
 
-   this.checkLoggedIn(document.defaultView?.localStorage);
+   this.checkLoggedIn(document.defaultView?.localStorage); 
 
    this.subscribeToAuthStatus();
   }
@@ -28,10 +28,12 @@ export class AppService implements OnDestroy {
 
       const token = localStorage.getItem('JWT_TOKEN');
 
-      console.log({token})
-      if (token) this.isLoggedIn$.next(true)
-       
+      if (token) this.toggleloggedInObservable(true);
+
+      else this.toggleloggedInObservable(false);
    }
+
+   else this.toggleloggedInObservable(false);
   }
 
    private subscribeToAuthStatus(): void {
@@ -42,9 +44,30 @@ export class AppService implements OnDestroy {
     });
   }
 
+  public handleAuthStatus() {
+
+    const isLoggedIn = this.isLoggedIn$.getValue();
+  
+    if (isLoggedIn) {
+
+      localStorage.removeItem('JWT_TOKEN');
+
+      this.toggleloggedInObservable(false);
+    }
+
+    const redirectTo = isLoggedIn ? '/' : '/sign_in';
+    
+    this.router.navigate([redirectTo]);
+  }
+
   public ngOnDestroy(): void {
 
     if (this.authStatusSubscription) this.authStatusSubscription.unsubscribe();
     
+  }
+
+  public toggleloggedInObservable(value: boolean){
+
+    this.isLoggedIn$.next(value)
   }
   }

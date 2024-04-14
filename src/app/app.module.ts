@@ -18,6 +18,7 @@ import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { AuthHttpInterceptor } from './components/auth/auth-interceptor.component';
 import { ProtectedComponent } from './components/protected/protected.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
  
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProtectedComponent } from './components/protected/protected.component';
     FormsComponent,
     SignInComponent,
     UnauthorizedComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

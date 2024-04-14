@@ -15,31 +15,10 @@ export class AppComponent {
   constructor(public appService: AppService,private router: Router) {}
 
 
-    handleAuthStatus() {
-
-      const isLoggedIn = this.appService.isLoggedIn$.getValue();
-    
-      if (isLoggedIn) {
-
-        localStorage.removeItem('JWT_TOKEN');
-        this.appService.isLoggedIn$.next(false);
-      }
-
-      const redirectTo = isLoggedIn ? '/' : '/sign_in';
-      
-      this.router.navigate([redirectTo]);
-    }
   }
-
-
-
-
   
   // todos -
   // shared modules
-  // autentication and authorization
-  // rxjs
+  // rxjs - unicast vs multicast observables
   // reactive forms - formBuilder, FormGroup, formarray, validation
-  // * guards
-  // * resolver
   // typescript
