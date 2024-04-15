@@ -47,7 +47,7 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
   providers: [
     provideClientHydration(),
     {
-      provide:HTTP_INTERCEPTORS,useClass:AuthHttpInterceptor,multi:true
+      provide:HTTP_INTERCEPTORS, useClass:AuthHttpInterceptor, multi:true
     }
   ],
   bootstrap: [AppComponent]

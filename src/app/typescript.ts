@@ -97,9 +97,13 @@ const person: Person = {
 type location = {
     street: string,
     city: string,
-    pincode: string
+    pincode?: string
 }
 
+const L:location = {
+  street: "",
+  city: "", 
+}
 // intersection types combine multiple types into one
 
 
@@ -167,13 +171,45 @@ interface Vehicle { // When we create an interface we are basically creating a n
       console.log(`${this.sound}...`)
     }
   }
+
+
+
+  function my_secret_decorator(constructor: Function) {
+    console.log("Class decorator called");
+  }
+
+
+  function logMethod(
+    target: any,
+    methodName: string,
+    descriptor: PropertyDescriptor
+) {
+    console.log("Class decorator called");
+
+    const originalMethod = descriptor.value;
+
+    descriptor.value = function (this: any, ...args: any[]) {
+        console.log(`entering method ${methodName}`);
+
+        const result = originalMethod.call(this, ...args);
+
+        console.log(`exiting method ${methodName}`);
+
+        return result;
+    };
+
+    return descriptor;
+}
   
+
+  @my_secret_decorator
   class Dog extends Animal {
   
     constructor(sound:string){
       super(sound);
     };
     
+    @logMethod
     reactToBeingPet(){
       
       this.makeSound();
@@ -191,3 +227,25 @@ interface Vehicle { // When we create an interface we are basically creating a n
   //animal.makeSound() //not allowed
   
   let value: string & number; // Union type
+
+
+  let value2: unknown;
+
+value2 = 123; // OK
+value2 = "hello"; // OK
+
+// You cannot do this without narrowing the type or asserting a specific type:
+// const length = value.length; // Error: Property 'length' does not exist on type 'unknown'.
+
+// But you can do this after narrowing the type:
+
+if (typeof value2 === "string") {
+    const length = value2.length; // OK
+}
+
+interface User1 {
+  id: number;
+}
+type User2 = {
+  name: string;
+}
