@@ -34,3 +34,5 @@ export class AuthenticationRoutesGuard implements CanActivate {
     );
   }
 }
+
+// the guard works well except for showing the sign_in component first when visiting the protected routes while the user is logged in

@@ -17,7 +17,6 @@ export class RxjsComponent implements OnInit {
     // next(value): Handles the next value emitted by the Observable.
     // error(err): Handles any error emitted by the Observable.
     // complete(): Indicates that the Observable has completed emitting values.
-
   }
 
   ngOnInit(): void {
@@ -31,7 +30,9 @@ export class RxjsComponent implements OnInit {
       error: err => console.error(err),
       // when you call complete() on an Observable, it signifies the end of emissions, and the Observable is marked as complete. 
       // Subscribers to this Observable will receive the completion notification and automatically unsubscribe.
-      complete: () => this.events = []
+      complete: () => setTimeout(() => {
+        this.events = []
+      }, 1000)
     })
   }
 
@@ -43,7 +44,7 @@ export class RxjsComponent implements OnInit {
       const intervalId = setInterval(() => {
         subscriber.next(count);
 
-        // subscriber.error(NEW Error('ERROR'));
+        // subscriber.error(new Error('ERROR'));
         
         if (count === 10) {
           subscriber.complete();

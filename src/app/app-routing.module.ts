@@ -22,10 +22,10 @@ const routes: Routes = [
   { path:"pipes",  component: PipesExampleComponent },
   { path:"communication",  component: ParentComponent },
   { path:"forms",  component: FormsComponent },
-  { path:"sign_in", canActivate:[AuthenticationRoutesGuard], component: SignInComponent },
   { path:"unauthorized", component: UnauthorizedComponent },
   { path:"rxjs", component: RxjsComponent },
   { path:"protected", canActivate:[AuthenticationRequiringRoutesGuard], component: ProtectedComponent },
+  { path:"sign_in", canActivate:[AuthenticationRoutesGuard], component: SignInComponent },
  // canActivate:[AuthGuard],
   // Lazy loading in Angular is a technique used to improve the performance of your application by loading modules only when they are needed. 
   // Instead of loading all modules at once when the application starts, Angular loads modules asynchronously as the user navigates through the application. 
