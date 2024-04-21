@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,7 @@ import { UnauthorizedComponent } from './components/unauthorized/unauthorized.co
 import { AuthHttpInterceptor } from './components/auth/auth-interceptor.component';
 import { ProtectedComponent } from './components/protected/protected.component';
 import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { GlobalErrorHandler } from './utilities/globalErrorHandler';
  
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
     provideClientHydration(),
     {
       provide:HTTP_INTERCEPTORS, useClass:AuthHttpInterceptor, multi:true
-    }
+    },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

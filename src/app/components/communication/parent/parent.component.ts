@@ -9,7 +9,6 @@ import { ChildComponent } from '../child/child.component';
 })
 export class ParentComponent implements AfterViewInit{
 
-  // definate assingment assersion
   bankDetails!: BankDetails;
   
   // { static: true } as a second argument needs to be applied to ALL usages of @ViewChild() (and also @ContentChild() if you plan on accessing the selected element inside of ngOnInit()
